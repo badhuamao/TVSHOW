@@ -3,115 +3,113 @@ socks-port: 7891
 allow-lan: true
 mode: rule
 proxies:
-  - {name: 'FR-17b-001', server: [2001:bc8:32d7:17b::1], port: 22000, type: hysteria2, password: 'dongtaiwang.com', sni: apple.com, skip-cert-verify: true}
-  - {name: 'FR-17b-002', server: [2001:bc8:32d7:17b::2], port: 22000, type: hysteria2, password: 'dongtaiwang.com', sni: apple.com, skip-cert-verify: true}
-  - {name: 'FR-17b-003', server: [2001:bc8:32d7:17b::3], port: 22000, type: hysteria2, password: 'dongtaiwang.com', sni: apple.com, skip-cert-verify: true}
-  - {name: 'FR-17b-004', server: [2001:bc8:32d7:17b::4], port: 22000, type: hysteria2, password: 'dongtaiwang.com', sni: apple.com, skip-cert-verify: true}
-  - {name: 'FR-17b-005', server: [2001:bc8:32d7:17b::5], port: 22000, type: hysteria2, password: 'dongtaiwang.com', sni: apple.com, skip-cert-verify: true}
-  - {name: 'FR-17b-006', server: [2001:bc8:32d7:17b::6], port: 22000, type: hysteria2, password: 'dongtaiwang.com', sni: apple.com, skip-cert-verify: true}
-  - {name: 'FR-17b-007', server: [2001:bc8:32d7:17b::7], port: 22000, type: hysteria2, password: 'dongtaiwang.com', sni: apple.com, skip-cert-verify: true}
-  - {name: 'FR-17b-008', server: [2001:bc8:32d7:17b::8], port: 22000, type: hysteria2, password: 'dongtaiwang.com', sni: apple.com, skip-cert-verify: true}
-  - {name: 'FR-17b-009', server: [2001:bc8:32d7:17b::9], port: 22000, type: hysteria2, password: 'dongtaiwang.com', sni: apple.com, skip-cert-verify: true}
-  - {name: 'FR-17b-010', server: [2001:bc8:32d7:17b::10], port: 22000, type: hysteria2, password: 'dongtaiwang.com', sni: apple.com, skip-cert-verify: true}
-  - {name: 'FR-17b-011', server: [2001:bc8:32d7:17b::11], port: 22000, type: hysteria2, password: 'dongtaiwang.com', sni: apple.com, skip-cert-verify: true}
-  - {name: 'FR-17b-012', server: [2001:bc8:32d7:17b::12], port: 22000, type: hysteria2, password: 'dongtaiwang.com', sni: apple.com, skip-cert-verify: true}
-  - {name: 'FR-17b-013', server: [2001:bc8:32d7:17b::13], port: 22000, type: hysteria2, password: 'dongtaiwang.com', sni: apple.com, skip-cert-verify: true}
-  - {name: 'FR-17b-014', server: [2001:bc8:32d7:17b::14], port: 22000, type: hysteria2, password: 'dongtaiwang.com', sni: apple.com, skip-cert-verify: true}
-  - {name: 'FR-17b-015', server: [2001:bc8:32d7:17b::15], port: 22000, type: hysteria2, password: 'dongtaiwang.com', sni: apple.com, skip-cert-verify: true}
-  - {name: 'FR-17b-016', server: [2001:bc8:32d7:17b::16], port: 22000, type: hysteria2, password: 'dongtaiwang.com', sni: apple.com, skip-cert-verify: true}
-  - {name: 'FR-17b-017', server: [2001:bc8:32d7:17b::17], port: 22000, type: hysteria2, password: 'dongtaiwang.com', sni: apple.com, skip-cert-verify: true}
-  - {name: 'FR-17b-018', server: [2001:bc8:32d7:17b::18], port: 22000, type: hysteria2, password: 'dongtaiwang.com', sni: apple.com, skip-cert-verify: true}
-  - {name: 'FR-17b-019', server: [2001:bc8:32d7:17b::19], port: 22000, type: hysteria2, password: 'dongtaiwang.com', sni: apple.com, skip-cert-verify: true}
-  - {name: 'FR-17b-020', server: [2001:bc8:32d7:17b::20], port: 22000, type: hysteria2, password: 'dongtaiwang.com', sni: apple.com, skip-cert-verify: true}
-  - {name: 'FR-17b-021', server: [2001:bc8:32d7:17b::21], port: 22000, type: hysteria2, password: 'dongtaiwang.com', sni: apple.com, skip-cert-verify: true}
-  - {name: 'FR-17b-022', server: [2001:bc8:32d7:17b::22], port: 22000, type: hysteria2, password: 'dongtaiwang.com', sni: apple.com, skip-cert-verify: true}
-  - {name: 'FR-17b-023', server: [2001:bc8:32d7:17b::23], port: 22000, type: hysteria2, password: 'dongtaiwang.com', sni: apple.com, skip-cert-verify: true}
-  - {name: 'FR-17b-024', server: [2001:bc8:32d7:17b::24], port: 22000, type: hysteria2, password: 'dongtaiwang.com', sni: apple.com, skip-cert-verify: true}
-  - {name: 'FR-17b-025', server: [2001:bc8:32d7:17b::25], port: 22000, type: hysteria2, password: 'dongtaiwang.com', sni: apple.com, skip-cert-verify: true}
-  - {name: 'FR-17b-026', server: [2001:bc8:32d7:17b::26], port: 22000, type: hysteria2, password: 'dongtaiwang.com', sni: apple.com, skip-cert-verify: true}
-  - {name: 'FR-17b-027', server: [2001:bc8:32d7:17b::27], port: 22000, type: hysteria2, password: 'dongtaiwang.com', sni: apple.com, skip-cert-verify: true}
-  - {name: 'FR-17b-028', server: [2001:bc8:32d7:17b::28], port: 22000, type: hysteria2, password: 'dongtaiwang.com', sni: apple.com, skip-cert-verify: true}
-  - {name: 'FR-17b-029', server: [2001:bc8:32d7:17b::29], port: 22000, type: hysteria2, password: 'dongtaiwang.com', sni: apple.com, skip-cert-verify: true}
-  - {name: 'FR-17b-030', server: [2001:bc8:32d7:17b::30], port: 22000, type: hysteria2, password: 'dongtaiwang.com', sni: apple.com, skip-cert-verify: true}
-  - {name: 'FR-17b-031', server: [2001:bc8:32d7:17b::31], port: 22000, type: hysteria2, password: 'dongtaiwang.com', sni: apple.com, skip-cert-verify: true}
-  - {name: 'FR-17b-032', server: [2001:bc8:32d7:17b::32], port: 22000, type: hysteria2, password: 'dongtaiwang.com', sni: apple.com, skip-cert-verify: true}
-  - {name: 'FR-17b-033', server: [2001:bc8:32d7:17b::33], port: 22000, type: hysteria2, password: 'dongtaiwang.com', sni: apple.com, skip-cert-verify: true}
-  - {name: 'FR-17b-034', server: [2001:bc8:32d7:17b::34], port: 22000, type: hysteria2, password: 'dongtaiwang.com', sni: apple.com, skip-cert-verify: true}
-  - {name: 'FR-17b-035', server: [2001:bc8:32d7:17b::35], port: 22000, type: hysteria2, password: 'dongtaiwang.com', sni: apple.com, skip-cert-verify: true}
-  - {name: 'FR-17b-036', server: [2001:bc8:32d7:17b::36], port: 22000, type: hysteria2, password: 'dongtaiwang.com', sni: apple.com, skip-cert-verify: true}
-  - {name: 'FR-17b-037', server: [2001:bc8:32d7:17b::37], port: 22000, type: hysteria2, password: 'dongtaiwang.com', sni: apple.com, skip-cert-verify: true}
-  - {name: 'FR-17b-038', server: [2001:bc8:32d7:17b::38], port: 22000, type: hysteria2, password: 'dongtaiwang.com', sni: apple.com, skip-cert-verify: true}
-  - {name: 'FR-17b-039', server: [2001:bc8:32d7:17b::39], port: 22000, type: hysteria2, password: 'dongtaiwang.com', sni: apple.com, skip-cert-verify: true}
-  - {name: 'FR-17b-040', server: [2001:bc8:32d7:17b::40], port: 22000, type: hysteria2, password: 'dongtaiwang.com', sni: apple.com, skip-cert-verify: true}
-  - {name: 'FR-17b-041', server: [2001:bc8:32d7:17b::41], port: 22000, type: hysteria2, password: 'dongtaiwang.com', sni: apple.com, skip-cert-verify: true}
-  - {name: 'FR-17b-042', server: [2001:bc8:32d7:17b::42], port: 22000, type: hysteria2, password: 'dongtaiwang.com', sni: apple.com, skip-cert-verify: true}
-  - {name: 'FR-17b-043', server: [2001:bc8:32d7:17b::43], port: 22000, type: hysteria2, password: 'dongtaiwang.com', sni: apple.com, skip-cert-verify: true}
-  - {name: 'FR-17b-044', server: [2001:bc8:32d7:17b::44], port: 22000, type: hysteria2, password: 'dongtaiwang.com', sni: apple.com, skip-cert-verify: true}
-  - {name: 'FR-17b-045', server: [2001:bc8:32d7:17b::45], port: 22000, type: hysteria2, password: 'dongtaiwang.com', sni: apple.com, skip-cert-verify: true}
-  - {name: 'FR-17b-046', server: [2001:bc8:32d7:17b::46], port: 22000, type: hysteria2, password: 'dongtaiwang.com', sni: apple.com, skip-cert-verify: true}
-  - {name: 'FR-17b-047', server: [2001:bc8:32d7:17b::47], port: 22000, type: hysteria2, password: 'dongtaiwang.com', sni: apple.com, skip-cert-verify: true}
-  - {name: 'FR-17b-048', server: [2001:bc8:32d7:17b::48], port: 22000, type: hysteria2, password: 'dongtaiwang.com', sni: apple.com, skip-cert-verify: true}
-  - {name: 'FR-17b-049', server: [2001:bc8:32d7:17b::49], port: 22000, type: hysteria2, password: 'dongtaiwang.com', sni: apple.com, skip-cert-verify: true}
-  - {name: 'FR-17b-050', server: [2001:bc8:32d7:17b::50], port: 22000, type: hysteria2, password: 'dongtaiwang.com', sni: apple.com, skip-cert-verify: true}
-  - {name: 'FR-17b-051', server: [2001:bc8:32d7:17b::51], port: 22000, type: hysteria2, password: 'dongtaiwang.com', sni: apple.com, skip-cert-verify: true}
-  - {name: 'FR-17b-052', server: [2001:bc8:32d7:17b::52], port: 22000, type: hysteria2, password: 'dongtaiwang.com', sni: apple.com, skip-cert-verify: true}
-  - {name: 'FR-17b-053', server: [2001:bc8:32d7:17b::53], port: 22000, type: hysteria2, password: 'dongtaiwang.com', sni: apple.com, skip-cert-verify: true}
-  - {name: 'FR-17b-054', server: [2001:bc8:32d7:17b::54], port: 22000, type: hysteria2, password: 'dongtaiwang.com', sni: apple.com, skip-cert-verify: true}
-  - {name: 'FR-17b-055', server: [2001:bc8:32d7:17b::55], port: 22000, type: hysteria2, password: 'dongtaiwang.com', sni: apple.com, skip-cert-verify: true}
-  - {name: 'FR-17b-056', server: [2001:bc8:32d7:17b::56], port: 22000, type: hysteria2, password: 'dongtaiwang.com', sni: apple.com, skip-cert-verify: true}
-  - {name: 'FR-17b-057', server: [2001:bc8:32d7:17b::57], port: 22000, type: hysteria2, password: 'dongtaiwang.com', sni: apple.com, skip-cert-verify: true}
-  - {name: 'FR-17b-058', server: [2001:bc8:32d7:17b::58], port: 22000, type: hysteria2, password: 'dongtaiwang.com', sni: apple.com, skip-cert-verify: true}
-  - {name: 'FR-17b-059', server: [2001:bc8:32d7:17b::59], port: 22000, type: hysteria2, password: 'dongtaiwang.com', sni: apple.com, skip-cert-verify: true}
-  - {name: 'FR-17b-060', server: [2001:bc8:32d7:17b::60], port: 22000, type: hysteria2, password: 'dongtaiwang.com', sni: apple.com, skip-cert-verify: true}
-  - {name: 'FR-17b-061', server: [2001:bc8:32d7:17b::61], port: 22000, type: hysteria2, password: 'dongtaiwang.com', sni: apple.com, skip-cert-verify: true}
-  - {name: 'FR-17b-062', server: [2001:bc8:32d7:17b::62], port: 22000, type: hysteria2, password: 'dongtaiwang.com', sni: apple.com, skip-cert-verify: true}
-  - {name: 'FR-17b-063', server: [2001:bc8:32d7:17b::63], port: 22000, type: hysteria2, password: 'dongtaiwang.com', sni: apple.com, skip-cert-verify: true}
-  - {name: 'FR-17b-064', server: [2001:bc8:32d7:17b::64], port: 22000, type: hysteria2, password: 'dongtaiwang.com', sni: apple.com, skip-cert-verify: true}
-  - {name: 'FR-17b-065', server: [2001:bc8:32d7:17b::65], port: 22000, type: hysteria2, password: 'dongtaiwang.com', sni: apple.com, skip-cert-verify: true}
-  - {name: 'FR-17b-066', server: [2001:bc8:32d7:17b::66], port: 22000, type: hysteria2, password: 'dongtaiwang.com', sni: apple.com, skip-cert-verify: true}
-  - {name: 'FR-17b-067', server: [2001:bc8:32d7:17b::67], port: 22000, type: hysteria2, password: 'dongtaiwang.com', sni: apple.com, skip-cert-verify: true}
-  - {name: 'FR-17b-068', server: [2001:bc8:32d7:17b::68], port: 22000, type: hysteria2, password: 'dongtaiwang.com', sni: apple.com, skip-cert-verify: true}
-  - {name: 'FR-17b-069', server: [2001:bc8:32d7:17b::69], port: 22000, type: hysteria2, password: 'dongtaiwang.com', sni: apple.com, skip-cert-verify: true}
-  - {name: 'FR-17b-070', server: [2001:bc8:32d7:17b::70], port: 22000, type: hysteria2, password: 'dongtaiwang.com', sni: apple.com, skip-cert-verify: true}
-  - {name: 'FR-17b-071', server: [2001:bc8:32d7:17b::71], port: 22000, type: hysteria2, password: 'dongtaiwang.com', sni: apple.com, skip-cert-verify: true}
-  - {name: 'FR-17b-072', server: [2001:bc8:32d7:17b::72], port: 22000, type: hysteria2, password: 'dongtaiwang.com', sni: apple.com, skip-cert-verify: true}
-  - {name: 'FR-17b-073', server: [2001:bc8:32d7:17b::73], port: 22000, type: hysteria2, password: 'dongtaiwang.com', sni: apple.com, skip-cert-verify: true}
-  - {name: 'FR-17b-074', server: [2001:bc8:32d7:17b::74], port: 22000, type: hysteria2, password: 'dongtaiwang.com', sni: apple.com, skip-cert-verify: true}
-  - {name: 'FR-17b-075', server: [2001:bc8:32d7:17b::75], port: 22000, type: hysteria2, password: 'dongtaiwang.com', sni: apple.com, skip-cert-verify: true}
-  - {name: 'FR-17b-076', server: [2001:bc8:32d7:17b::76], port: 22000, type: hysteria2, password: 'dongtaiwang.com', sni: apple.com, skip-cert-verify: true}
-  - {name: 'FR-17b-077', server: [2001:bc8:32d7:17b::77], port: 22000, type: hysteria2, password: 'dongtaiwang.com', sni: apple.com, skip-cert-verify: true}
-  - {name: 'FR-17b-078', server: [2001:bc8:32d7:17b::78], port: 22000, type: hysteria2, password: 'dongtaiwang.com', sni: apple.com, skip-cert-verify: true}
-  - {name: 'FR-17b-079', server: [2001:bc8:32d7:17b::79], port: 22000, type: hysteria2, password: 'dongtaiwang.com', sni: apple.com, skip-cert-verify: true}
-  - {name: 'FR-17b-080', server: [2001:bc8:32d7:17b::80], port: 22000, type: hysteria2, password: 'dongtaiwang.com', sni: apple.com, skip-cert-verify: true}
-  - {name: 'FR-17b-081', server: [2001:bc8:32d7:17b::81], port: 22000, type: hysteria2, password: 'dongtaiwang.com', sni: apple.com, skip-cert-verify: true}
-  - {name: 'FR-17b-082', server: [2001:bc8:32d7:17b::82], port: 22000, type: hysteria2, password: 'dongtaiwang.com', sni: apple.com, skip-cert-verify: true}
-  - {name: 'FR-17b-083', server: [2001:bc8:32d7:17b::83], port: 22000, type: hysteria2, password: 'dongtaiwang.com', sni: apple.com, skip-cert-verify: true}
-  - {name: 'FR-17b-084', server: [2001:bc8:32d7:17b::84], port: 22000, type: hysteria2, password: 'dongtaiwang.com', sni: apple.com, skip-cert-verify: true}
-  - {name: 'FR-17b-085', server: [2001:bc8:32d7:17b::85], port: 22000, type: hysteria2, password: 'dongtaiwang.com', sni: apple.com, skip-cert-verify: true}
-  - {name: 'FR-17b-086', server: [2001:bc8:32d7:17b::86], port: 22000, type: hysteria2, password: 'dongtaiwang.com', sni: apple.com, skip-cert-verify: true}
-  - {name: 'FR-17b-087', server: [2001:bc8:32d7:17b::87], port: 22000, type: hysteria2, password: 'dongtaiwang.com', sni: apple.com, skip-cert-verify: true}
-  - {name: 'FR-17b-088', server: [2001:bc8:32d7:17b::88], port: 22000, type: hysteria2, password: 'dongtaiwang.com', sni: apple.com, skip-cert-verify: true}
-  - {name: 'FR-17b-089', server: [2001:bc8:32d7:17b::89], port: 22000, type: hysteria2, password: 'dongtaiwang.com', sni: apple.com, skip-cert-verify: true}
-  - {name: 'FR-17b-090', server: [2001:bc8:32d7:17b::90], port: 22000, type: hysteria2, password: 'dongtaiwang.com', sni: apple.com, skip-cert-verify: true}
-  - {name: 'FR-17b-091', server: [2001:bc8:32d7:17b::91], port: 22000, type: hysteria2, password: 'dongtaiwang.com', sni: apple.com, skip-cert-verify: true}
-  - {name: 'FR-17b-092', server: [2001:bc8:32d7:17b::92], port: 22000, type: hysteria2, password: 'dongtaiwang.com', sni: apple.com, skip-cert-verify: true}
-  - {name: 'FR-17b-093', server: [2001:bc8:32d7:17b::93], port: 22000, type: hysteria2, password: 'dongtaiwang.com', sni: apple.com, skip-cert-verify: true}
-  - {name: 'FR-17b-094', server: [2001:bc8:32d7:17b::94], port: 22000, type: hysteria2, password: 'dongtaiwang.com', sni: apple.com, skip-cert-verify: true}
-  - {name: 'FR-17b-095', server: [2001:bc8:32d7:17b::95], port: 22000, type: hysteria2, password: 'dongtaiwang.com', sni: apple.com, skip-cert-verify: true}
-  - {name: 'FR-17b-096', server: [2001:bc8:32d7:17b::96], port: 22000, type: hysteria2, password: 'dongtaiwang.com', sni: apple.com, skip-cert-verify: true}
-  - {name: 'FR-17b-097', server: [2001:bc8:32d7:17b::97], port: 22000, type: hysteria2, password: 'dongtaiwang.com', sni: apple.com, skip-cert-verify: true}
-  - {name: 'FR-17b-098', server: [2001:bc8:32d7:17b::98], port: 22000, type: hysteria2, password: 'dongtaiwang.com', sni: apple.com, skip-cert-verify: true}
-  - {name: 'FR-17b-099', server: [2001:bc8:32d7:17b::99], port: 22000, type: hysteria2, password: 'dongtaiwang.com', sni: apple.com, skip-cert-verify: true}
-  - {name: 'FR-17b-100', server: [2001:bc8:32d7:17b::100], port: 22000, type: hysteria2, password: 'dongtaiwang.com', sni: apple.com, skip-cert-verify: true}
-  - {name: 'vpn-sg-002_1', server: vpn-sg-002.fastervpn.world, port: 443, type: hysteria2, password: 'qQe1z5kU8kN6SlKnDt9Ru3Qp', sni: vpn-sg-002.fastervpn.world, skip-cert-verify: true}
-  - {name: 'vpn-jp-016_1', server: vpn-jp-016.fastervpn.world, port: 443, type: hysteria2, password: 'qQe1z5kU8kN6SlKnDt9Ru3Qp', sni: vpn-jp-016.fastervpn.world, skip-cert-verify: true}
-  - {name: 'vpn-jp-007_1', server: vpn-jp-007.fastervpn.world, port: 443, type: hysteria2, password: 'qQe1z5kU8kN6SlKnDt9Ru3Qp', sni: vpn-jp-007.fastervpn.world, skip-cert-verify: true}
-  - {name: 'vpn-us-022_1', server: vpn-us-022.fastervpn.world, port: 443, type: hysteria2, password: 'qQe1z5kU8kN6SlKnDt9Ru3Qp', sni: vpn-us-022.fastervpn.world, skip-cert-verify: true}
-  - {name: 'vpn-us-024_1', server: vpn-us-024.fastervpn.world, port: 443, type: hysteria2, password: 'qQe1z5kU8kN6SlKnDt9Ru3Qp', sni: vpn-us-024.fastervpn.world, skip-cert-verify: true}
-  - {name: 'vpn-jp-013_1', server: vpn-jp-013.fastervpn.world, port: 443, type: hysteria2, password: 'qQe1z5kU8kN6SlKnDt9Ru3Qp', sni: vpn-jp-013.fastervpn.world, skip-cert-verify: true}
-  - {name: 'vpn-jp-006_1', server: vpn-jp-006.fastervpn.world, port: 443, type: hysteria2, password: 'qQe1z5kU8kN6SlKnDt9Ru3Qp', sni: vpn-jp-006.fastervpn.world, skip-cert-verify: true}
-  - {name: 'vpn-us-011_1', server: vpn-us-011.fastervpn.world, port: 443, type: hysteria2, password: 'qQe1z5kU8kN6SlKnDt9Ru3Qp', sni: vpn-us-011.fastervpn.world, skip-cert-verify: true}
-  - {name: 'vpn-us-006_1', server: vpn-us-006.fastervpn.world, port: 443, type: hysteria2, password: 'qQe1z5kU8kN6SlKnDt9Ru3Qp', sni: vpn-us-006.fastervpn.world, skip-cert-verify: true}
+  - {name: 'FR-17b-001', server: '[2001:bc8:32d7:17b::1]', port: 22000, type: hysteria2, password: 'dongtaiwang.com', sni: 'apple.com', skip-cert-verify: true}
+  - {name: 'FR-17b-002', server: '[2001:bc8:32d7:17b::2]', port: 22000, type: hysteria2, password: 'dongtaiwang.com', sni: 'apple.com', skip-cert-verify: true}
+  - {name: 'FR-17b-003', server: '[2001:bc8:32d7:17b::3]', port: 22000, type: hysteria2, password: 'dongtaiwang.com', sni: 'apple.com', skip-cert-verify: true}
+  - {name: 'FR-17b-004', server: '[2001:bc8:32d7:17b::4]', port: 22000, type: hysteria2, password: 'dongtaiwang.com', sni: 'apple.com', skip-cert-verify: true}
+  - {name: 'FR-17b-005', server: '[2001:bc8:32d7:17b::5]', port: 22000, type: hysteria2, password: 'dongtaiwang.com', sni: 'apple.com', skip-cert-verify: true}
+  - {name: 'FR-17b-006', server: '[2001:bc8:32d7:17b::6]', port: 22000, type: hysteria2, password: 'dongtaiwang.com', sni: 'apple.com', skip-cert-verify: true}
+  - {name: 'FR-17b-007', server: '[2001:bc8:32d7:17b::7]', port: 22000, type: hysteria2, password: 'dongtaiwang.com', sni: 'apple.com', skip-cert-verify: true}
+  - {name: 'FR-17b-008', server: '[2001:bc8:32d7:17b::8]', port: 22000, type: hysteria2, password: 'dongtaiwang.com', sni: 'apple.com', skip-cert-verify: true}
+  - {name: 'FR-17b-009', server: '[2001:bc8:32d7:17b::9]', port: 22000, type: hysteria2, password: 'dongtaiwang.com', sni: 'apple.com', skip-cert-verify: true}
+  - {name: 'FR-17b-010', server: '[2001:bc8:32d7:17b::10]', port: 22000, type: hysteria2, password: 'dongtaiwang.com', sni: 'apple.com', skip-cert-verify: true}
+  - {name: 'FR-17b-011', server: '[2001:bc8:32d7:17b::11]', port: 22000, type: hysteria2, password: 'dongtaiwang.com', sni: 'apple.com', skip-cert-verify: true}
+  - {name: 'FR-17b-012', server: '[2001:bc8:32d7:17b::12]', port: 22000, type: hysteria2, password: 'dongtaiwang.com', sni: 'apple.com', skip-cert-verify: true}
+  - {name: 'FR-17b-013', server: '[2001:bc8:32d7:17b::13]', port: 22000, type: hysteria2, password: 'dongtaiwang.com', sni: 'apple.com', skip-cert-verify: true}
+  - {name: 'FR-17b-014', server: '[2001:bc8:32d7:17b::14]', port: 22000, type: hysteria2, password: 'dongtaiwang.com', sni: 'apple.com', skip-cert-verify: true}
+  - {name: 'FR-17b-015', server: '[2001:bc8:32d7:17b::15]', port: 22000, type: hysteria2, password: 'dongtaiwang.com', sni: 'apple.com', skip-cert-verify: true}
+  - {name: 'FR-17b-016', server: '[2001:bc8:32d7:17b::16]', port: 22000, type: hysteria2, password: 'dongtaiwang.com', sni: 'apple.com', skip-cert-verify: true}
+  - {name: 'FR-17b-017', server: '[2001:bc8:32d7:17b::17]', port: 22000, type: hysteria2, password: 'dongtaiwang.com', sni: 'apple.com', skip-cert-verify: true}
+  - {name: 'FR-17b-018', server: '[2001:bc8:32d7:17b::18]', port: 22000, type: hysteria2, password: 'dongtaiwang.com', sni: 'apple.com', skip-cert-verify: true}
+  - {name: 'FR-17b-019', server: '[2001:bc8:32d7:17b::19]', port: 22000, type: hysteria2, password: 'dongtaiwang.com', sni: 'apple.com', skip-cert-verify: true}
+  - {name: 'FR-17b-020', server: '[2001:bc8:32d7:17b::20]', port: 22000, type: hysteria2, password: 'dongtaiwang.com', sni: 'apple.com', skip-cert-verify: true}
+  - {name: 'FR-17b-021', server: '[2001:bc8:32d7:17b::21]', port: 22000, type: hysteria2, password: 'dongtaiwang.com', sni: 'apple.com', skip-cert-verify: true}
+  - {name: 'FR-17b-022', server: '[2001:bc8:32d7:17b::22]', port: 22000, type: hysteria2, password: 'dongtaiwang.com', sni: 'apple.com', skip-cert-verify: true}
+  - {name: 'FR-17b-023', server: '[2001:bc8:32d7:17b::23]', port: 22000, type: hysteria2, password: 'dongtaiwang.com', sni: 'apple.com', skip-cert-verify: true}
+  - {name: 'FR-17b-024', server: '[2001:bc8:32d7:17b::24]', port: 22000, type: hysteria2, password: 'dongtaiwang.com', sni: 'apple.com', skip-cert-verify: true}
+  - {name: 'FR-17b-025', server: '[2001:bc8:32d7:17b::25]', port: 22000, type: hysteria2, password: 'dongtaiwang.com', sni: 'apple.com', skip-cert-verify: true}
+  - {name: 'FR-17b-026', server: '[2001:bc8:32d7:17b::26]', port: 22000, type: hysteria2, password: 'dongtaiwang.com', sni: 'apple.com', skip-cert-verify: true}
+  - {name: 'FR-17b-027', server: '[2001:bc8:32d7:17b::27]', port: 22000, type: hysteria2, password: 'dongtaiwang.com', sni: 'apple.com', skip-cert-verify: true}
+  - {name: 'FR-17b-028', server: '[2001:bc8:32d7:17b::28]', port: 22000, type: hysteria2, password: 'dongtaiwang.com', sni: 'apple.com', skip-cert-verify: true}
+  - {name: 'FR-17b-029', server: '[2001:bc8:32d7:17b::29]', port: 22000, type: hysteria2, password: 'dongtaiwang.com', sni: 'apple.com', skip-cert-verify: true}
+  - {name: 'FR-17b-030', server: '[2001:bc8:32d7:17b::30]', port: 22000, type: hysteria2, password: 'dongtaiwang.com', sni: 'apple.com', skip-cert-verify: true}
+  - {name: 'FR-17b-031', server: '[2001:bc8:32d7:17b::31]', port: 22000, type: hysteria2, password: 'dongtaiwang.com', sni: 'apple.com', skip-cert-verify: true}
+  - {name: 'FR-17b-032', server: '[2001:bc8:32d7:17b::32]', port: 22000, type: hysteria2, password: 'dongtaiwang.com', sni: 'apple.com', skip-cert-verify: true}
+  - {name: 'FR-17b-033', server: '[2001:bc8:32d7:17b::33]', port: 22000, type: hysteria2, password: 'dongtaiwang.com', sni: 'apple.com', skip-cert-verify: true}
+  - {name: 'FR-17b-034', server: '[2001:bc8:32d7:17b::34]', port: 22000, type: hysteria2, password: 'dongtaiwang.com', sni: 'apple.com', skip-cert-verify: true}
+  - {name: 'FR-17b-035', server: '[2001:bc8:32d7:17b::35]', port: 22000, type: hysteria2, password: 'dongtaiwang.com', sni: 'apple.com', skip-cert-verify: true}
+  - {name: 'FR-17b-036', server: '[2001:bc8:32d7:17b::36]', port: 22000, type: hysteria2, password: 'dongtaiwang.com', sni: 'apple.com', skip-cert-verify: true}
+  - {name: 'FR-17b-037', server: '[2001:bc8:32d7:17b::37]', port: 22000, type: hysteria2, password: 'dongtaiwang.com', sni: 'apple.com', skip-cert-verify: true}
+  - {name: 'FR-17b-038', server: '[2001:bc8:32d7:17b::38]', port: 22000, type: hysteria2, password: 'dongtaiwang.com', sni: 'apple.com', skip-cert-verify: true}
+  - {name: 'FR-17b-039', server: '[2001:bc8:32d7:17b::39]', port: 22000, type: hysteria2, password: 'dongtaiwang.com', sni: 'apple.com', skip-cert-verify: true}
+  - {name: 'FR-17b-040', server: '[2001:bc8:32d7:17b::40]', port: 22000, type: hysteria2, password: 'dongtaiwang.com', sni: 'apple.com', skip-cert-verify: true}
+  - {name: 'FR-17b-041', server: '[2001:bc8:32d7:17b::41]', port: 22000, type: hysteria2, password: 'dongtaiwang.com', sni: 'apple.com', skip-cert-verify: true}
+  - {name: 'FR-17b-042', server: '[2001:bc8:32d7:17b::42]', port: 22000, type: hysteria2, password: 'dongtaiwang.com', sni: 'apple.com', skip-cert-verify: true}
+  - {name: 'FR-17b-043', server: '[2001:bc8:32d7:17b::43]', port: 22000, type: hysteria2, password: 'dongtaiwang.com', sni: 'apple.com', skip-cert-verify: true}
+  - {name: 'FR-17b-044', server: '[2001:bc8:32d7:17b::44]', port: 22000, type: hysteria2, password: 'dongtaiwang.com', sni: 'apple.com', skip-cert-verify: true}
+  - {name: 'FR-17b-045', server: '[2001:bc8:32d7:17b::45]', port: 22000, type: hysteria2, password: 'dongtaiwang.com', sni: 'apple.com', skip-cert-verify: true}
+  - {name: 'FR-17b-046', server: '[2001:bc8:32d7:17b::46]', port: 22000, type: hysteria2, password: 'dongtaiwang.com', sni: 'apple.com', skip-cert-verify: true}
+  - {name: 'FR-17b-047', server: '[2001:bc8:32d7:17b::47]', port: 22000, type: hysteria2, password: 'dongtaiwang.com', sni: 'apple.com', skip-cert-verify: true}
+  - {name: 'FR-17b-048', server: '[2001:bc8:32d7:17b::48]', port: 22000, type: hysteria2, password: 'dongtaiwang.com', sni: 'apple.com', skip-cert-verify: true}
+  - {name: 'FR-17b-049', server: '[2001:bc8:32d7:17b::49]', port: 22000, type: hysteria2, password: 'dongtaiwang.com', sni: 'apple.com', skip-cert-verify: true}
+  - {name: 'FR-17b-050', server: '[2001:bc8:32d7:17b::50]', port: 22000, type: hysteria2, password: 'dongtaiwang.com', sni: 'apple.com', skip-cert-verify: true}
+  - {name: 'FR-17b-051', server: '[2001:bc8:32d7:17b::51]', port: 22000, type: hysteria2, password: 'dongtaiwang.com', sni: 'apple.com', skip-cert-verify: true}
+  - {name: 'FR-17b-052', server: '[2001:bc8:32d7:17b::52]', port: 22000, type: hysteria2, password: 'dongtaiwang.com', sni: 'apple.com', skip-cert-verify: true}
+  - {name: 'FR-17b-053', server: '[2001:bc8:32d7:17b::53]', port: 22000, type: hysteria2, password: 'dongtaiwang.com', sni: 'apple.com', skip-cert-verify: true}
+  - {name: 'FR-17b-054', server: '[2001:bc8:32d7:17b::54]', port: 22000, type: hysteria2, password: 'dongtaiwang.com', sni: 'apple.com', skip-cert-verify: true}
+  - {name: 'FR-17b-055', server: '[2001:bc8:32d7:17b::55]', port: 22000, type: hysteria2, password: 'dongtaiwang.com', sni: 'apple.com', skip-cert-verify: true}
+  - {name: 'FR-17b-056', server: '[2001:bc8:32d7:17b::56]', port: 22000, type: hysteria2, password: 'dongtaiwang.com', sni: 'apple.com', skip-cert-verify: true}
+  - {name: 'FR-17b-057', server: '[2001:bc8:32d7:17b::57]', port: 22000, type: hysteria2, password: 'dongtaiwang.com', sni: 'apple.com', skip-cert-verify: true}
+  - {name: 'FR-17b-058', server: '[2001:bc8:32d7:17b::58]', port: 22000, type: hysteria2, password: 'dongtaiwang.com', sni: 'apple.com', skip-cert-verify: true}
+  - {name: 'FR-17b-059', server: '[2001:bc8:32d7:17b::59]', port: 22000, type: hysteria2, password: 'dongtaiwang.com', sni: 'apple.com', skip-cert-verify: true}
+  - {name: 'FR-17b-060', server: '[2001:bc8:32d7:17b::60]', port: 22000, type: hysteria2, password: 'dongtaiwang.com', sni: 'apple.com', skip-cert-verify: true}
+  - {name: 'FR-17b-061', server: '[2001:bc8:32d7:17b::61]', port: 22000, type: hysteria2, password: 'dongtaiwang.com', sni: 'apple.com', skip-cert-verify: true}
+  - {name: 'FR-17b-062', server: '[2001:bc8:32d7:17b::62]', port: 22000, type: hysteria2, password: 'dongtaiwang.com', sni: 'apple.com', skip-cert-verify: true}
+  - {name: 'FR-17b-063', server: '[2001:bc8:32d7:17b::63]', port: 22000, type: hysteria2, password: 'dongtaiwang.com', sni: 'apple.com', skip-cert-verify: true}
+  - {name: 'FR-17b-064', server: '[2001:bc8:32d7:17b::64]', port: 22000, type: hysteria2, password: 'dongtaiwang.com', sni: 'apple.com', skip-cert-verify: true}
+  - {name: 'FR-17b-065', server: '[2001:bc8:32d7:17b::65]', port: 22000, type: hysteria2, password: 'dongtaiwang.com', sni: 'apple.com', skip-cert-verify: true}
+  - {name: 'FR-17b-066', server: '[2001:bc8:32d7:17b::66]', port: 22000, type: hysteria2, password: 'dongtaiwang.com', sni: 'apple.com', skip-cert-verify: true}
+  - {name: 'FR-17b-067', server: '[2001:bc8:32d7:17b::67]', port: 22000, type: hysteria2, password: 'dongtaiwang.com', sni: 'apple.com', skip-cert-verify: true}
+  - {name: 'FR-17b-068', server: '[2001:bc8:32d7:17b::68]', port: 22000, type: hysteria2, password: 'dongtaiwang.com', sni: 'apple.com', skip-cert-verify: true}
+  - {name: 'FR-17b-069', server: '[2001:bc8:32d7:17b::69]', port: 22000, type: hysteria2, password: 'dongtaiwang.com', sni: 'apple.com', skip-cert-verify: true}
+  - {name: 'FR-17b-070', server: '[2001:bc8:32d7:17b::70]', port: 22000, type: hysteria2, password: 'dongtaiwang.com', sni: 'apple.com', skip-cert-verify: true}
+  - {name: 'FR-17b-071', server: '[2001:bc8:32d7:17b::71]', port: 22000, type: hysteria2, password: 'dongtaiwang.com', sni: 'apple.com', skip-cert-verify: true}
+  - {name: 'FR-17b-072', server: '[2001:bc8:32d7:17b::72]', port: 22000, type: hysteria2, password: 'dongtaiwang.com', sni: 'apple.com', skip-cert-verify: true}
+  - {name: 'FR-17b-073', server: '[2001:bc8:32d7:17b::73]', port: 22000, type: hysteria2, password: 'dongtaiwang.com', sni: 'apple.com', skip-cert-verify: true}
+  - {name: 'FR-17b-074', server: '[2001:bc8:32d7:17b::74]', port: 22000, type: hysteria2, password: 'dongtaiwang.com', sni: 'apple.com', skip-cert-verify: true}
+  - {name: 'FR-17b-075', server: '[2001:bc8:32d7:17b::75]', port: 22000, type: hysteria2, password: 'dongtaiwang.com', sni: 'apple.com', skip-cert-verify: true}
+  - {name: 'FR-17b-076', server: '[2001:bc8:32d7:17b::76]', port: 22000, type: hysteria2, password: 'dongtaiwang.com', sni: 'apple.com', skip-cert-verify: true}
+  - {name: 'FR-17b-077', server: '[2001:bc8:32d7:17b::77]', port: 22000, type: hysteria2, password: 'dongtaiwang.com', sni: 'apple.com', skip-cert-verify: true}
+  - {name: 'FR-17b-078', server: '[2001:bc8:32d7:17b::78]', port: 22000, type: hysteria2, password: 'dongtaiwang.com', sni: 'apple.com', skip-cert-verify: true}
+  - {name: 'FR-17b-079', server: '[2001:bc8:32d7:17b::79]', port: 22000, type: hysteria2, password: 'dongtaiwang.com', sni: 'apple.com', skip-cert-verify: true}
+  - {name: 'FR-17b-080', server: '[2001:bc8:32d7:17b::80]', port: 22000, type: hysteria2, password: 'dongtaiwang.com', sni: 'apple.com', skip-cert-verify: true}
+  - {name: 'FR-17b-081', server: '[2001:bc8:32d7:17b::81]', port: 22000, type: hysteria2, password: 'dongtaiwang.com', sni: 'apple.com', skip-cert-verify: true}
+  - {name: 'FR-17b-082', server: '[2001:bc8:32d7:17b::82]', port: 22000, type: hysteria2, password: 'dongtaiwang.com', sni: 'apple.com', skip-cert-verify: true}
+  - {name: 'FR-17b-083', server: '[2001:bc8:32d7:17b::83]', port: 22000, type: hysteria2, password: 'dongtaiwang.com', sni: 'apple.com', skip-cert-verify: true}
+  - {name: 'FR-17b-084', server: '[2001:bc8:32d7:17b::84]', port: 22000, type: hysteria2, password: 'dongtaiwang.com', sni: 'apple.com', skip-cert-verify: true}
+  - {name: 'FR-17b-085', server: '[2001:bc8:32d7:17b::85]', port: 22000, type: hysteria2, password: 'dongtaiwang.com', sni: 'apple.com', skip-cert-verify: true}
+  - {name: 'FR-17b-086', server: '[2001:bc8:32d7:17b::86]', port: 22000, type: hysteria2, password: 'dongtaiwang.com', sni: 'apple.com', skip-cert-verify: true}
+  - {name: 'FR-17b-087', server: '[2001:bc8:32d7:17b::87]', port: 22000, type: hysteria2, password: 'dongtaiwang.com', sni: 'apple.com', skip-cert-verify: true}
+  - {name: 'FR-17b-088', server: '[2001:bc8:32d7:17b::88]', port: 22000, type: hysteria2, password: 'dongtaiwang.com', sni: 'apple.com', skip-cert-verify: true}
+  - {name: 'FR-17b-089', server: '[2001:bc8:32d7:17b::89]', port: 22000, type: hysteria2, password: 'dongtaiwang.com', sni: 'apple.com', skip-cert-verify: true}
+  - {name: 'FR-17b-090', server: '[2001:bc8:32d7:17b::90]', port: 22000, type: hysteria2, password: 'dongtaiwang.com', sni: 'apple.com', skip-cert-verify: true}
+  - {name: 'FR-17b-091', server: '[2001:bc8:32d7:17b::91]', port: 22000, type: hysteria2, password: 'dongtaiwang.com', sni: 'apple.com', skip-cert-verify: true}
+  - {name: 'FR-17b-092', server: '[2001:bc8:32d7:17b::92]', port: 22000, type: hysteria2, password: 'dongtaiwang.com', sni: 'apple.com', skip-cert-verify: true}
+  - {name: 'FR-17b-093', server: '[2001:bc8:32d7:17b::93]', port: 22000, type: hysteria2, password: 'dongtaiwang.com', sni: 'apple.com', skip-cert-verify: true}
+  - {name: 'FR-17b-094', server: '[2001:bc8:32d7:17b::94]', port: 22000, type: hysteria2, password: 'dongtaiwang.com', sni: 'apple.com', skip-cert-verify: true}
+  - {name: 'FR-17b-095', server: '[2001:bc8:32d7:17b::95]', port: 22000, type: hysteria2, password: 'dongtaiwang.com', sni: 'apple.com', skip-cert-verify: true}
+  - {name: 'FR-17b-096', server: '[2001:bc8:32d7:17b::96]', port: 22000, type: hysteria2, password: 'dongtaiwang.com', sni: 'apple.com', skip-cert-verify: true}
+  - {name: 'FR-17b-097', server: '[2001:bc8:32d7:17b::97]', port: 22000, type: hysteria2, password: 'dongtaiwang.com', sni: 'apple.com', skip-cert-verify: true}
+  - {name: 'FR-17b-098', server: '[2001:bc8:32d7:17b::98]', port: 22000, type: hysteria2, password: 'dongtaiwang.com', sni: 'apple.com', skip-cert-verify: true}
+  - {name: 'FR-17b-099', server: '[2001:bc8:32d7:17b::99]', port: 22000, type: hysteria2, password: 'dongtaiwang.com', sni: 'apple.com', skip-cert-verify: true}
+  - {name: 'FR-17b-100', server: '[2001:bc8:32d7:17b::100]', port: 22000, type: hysteria2, password: 'dongtaiwang.com', sni: 'apple.com', skip-cert-verify: true}
+  - {name: 'vpn-jp-016_1', server: 'vpn-jp-016.fastervpn.world', port: 443, type: hysteria2, password: 'qQe1z5kU8kN6SlKnDt9Ru3Qp', sni: 'vpn-jp-016.fastervpn.world', skip-cert-verify: true}
+  - {name: 'vpn-us-024_1', server: 'vpn-us-024.fastervpn.world', port: 443, type: hysteria2, password: 'qQe1z5kU8kN6SlKnDt9Ru3Qp', sni: 'vpn-us-024.fastervpn.world', skip-cert-verify: true}
+  - {name: 'vpn-us-022_1', server: 'vpn-us-022.fastervpn.world', port: 443, type: hysteria2, password: 'qQe1z5kU8kN6SlKnDt9Ru3Qp', sni: 'vpn-us-022.fastervpn.world', skip-cert-verify: true}
+  - {name: 'vpn-jp-007_1', server: 'vpn-jp-007.fastervpn.world', port: 443, type: hysteria2, password: 'qQe1z5kU8kN6SlKnDt9Ru3Qp', sni: 'vpn-jp-007.fastervpn.world', skip-cert-verify: true}
+  - {name: 'vpn-sg-002_1', server: 'vpn-sg-002.fastervpn.world', port: 443, type: hysteria2, password: 'qQe1z5kU8kN6SlKnDt9Ru3Qp', sni: 'vpn-sg-002.fastervpn.world', skip-cert-verify: true}
+  - {name: 'vpn-us-011_1', server: 'vpn-us-011.fastervpn.world', port: 443, type: hysteria2, password: 'qQe1z5kU8kN6SlKnDt9Ru3Qp', sni: 'vpn-us-011.fastervpn.world', skip-cert-verify: true}
+  - {name: 'vpn-us-006_1', server: 'vpn-us-006.fastervpn.world', port: 443, type: hysteria2, password: 'qQe1z5kU8kN6SlKnDt9Ru3Qp', sni: 'vpn-us-006.fastervpn.world', skip-cert-verify: true}
 
 proxy-groups:
   - name: 📺 电视自动故障转移
@@ -219,13 +217,11 @@ proxy-groups:
       - 'FR-17b-098'
       - 'FR-17b-099'
       - 'FR-17b-100'
-      - 'vpn-sg-002_1'
       - 'vpn-jp-016_1'
-      - 'vpn-jp-007_1'
-      - 'vpn-us-022_1'
       - 'vpn-us-024_1'
-      - 'vpn-jp-013_1'
-      - 'vpn-jp-006_1'
+      - 'vpn-us-022_1'
+      - 'vpn-jp-007_1'
+      - 'vpn-sg-002_1'
       - 'vpn-us-011_1'
       - 'vpn-us-006_1'
 
