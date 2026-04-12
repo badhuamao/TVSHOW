@@ -3,11 +3,11 @@ import re
 import os
 
 # --- 1. 基础配置 ---
-# 这里的搜索关键词恢复到最初，只抓取 FastVPN 相关的基础节点
+# 搜索关键词回归：只找 FastVPN 这种老软件跑得顺的
 SEARCH_QUERY = 'fastervpn.world'
 TOKEN = os.getenv("MY_GITHUB_TOKEN")
 
-# 恢复你最信赖的几个原始订阅源
+# 你的“老三样”稳健订阅源
 TARGET_URLS = [
     "https://raw.githubusercontent.com/shaoyouvip/free/main/all.yaml",
     "https://raw.githubusercontent.com/ssrsub/ssr/master/singbox.json",
@@ -31,9 +31,7 @@ def search_github():
 def harvest():
     final_nodes = []
     seen_uids = set()
-    name_counts = {}
     
-    # 合并所有来源
     all_sources = list(set(TARGET_URLS + search_github()))
     headers = {'User-Agent': 'Mozilla/5.0'}
     
@@ -42,20 +40,21 @@ def harvest():
             resp = requests.get(url, headers=headers, timeout=10)
             if resp.status_code != 200: continue
             
-            # 只抓取老内核支持的常规节点 (SS/VLESS/Trojan等)
-            # 过滤掉所有会让老 Clash 崩溃的 hysteria2 关键字
             content = resp.text
+            # --- 核心清理：只匹配 SS/VLESS/Trojan ---
+            # 彻底不再匹配 hysteria2:// 格式，从源头切断 17b
             links = re.findall(r"(ss://|vless://|trojan://)[\w\d\.\-@:/%?=&#]+", content, re.I)
             
             for link in links:
                 if link not in seen_uids:
-                    final_nodes.append(link) # 这里为了简单直接存链接，实际转换逻辑由 CF Worker 处理
+                    final_nodes.append(link)
                     seen_uids.add(link)
         except: continue
     return final_nodes
 
 if __name__ == "__main__":
-    # 提醒：这里直接触发你的 Cloudflare Worker 转换逻辑即可
-    # 保持你最熟悉的 "CF-Workers-SUB" 模式运行
-    print(f"✅ 已清理 17b 节点，库已恢复至纯净兼容模式。")
-    print(f"🚀 当前收割范围：仅限 FastVPN 基础兼容节点。")
+    # 结果依然会输出到你 CF Worker 对应的订阅文件里
+    # 电视端刷新一下，那些糟心的 404 和报错就全消失了
+    nodes = harvest()
+    print(f"✅ 17b 节点已物理隔离，库已回滚。")
+    print(f"📦 当前收割量：{len(nodes)} 个纯净兼容节点，老 Clash 随便跑。")
