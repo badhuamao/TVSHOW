@@ -15,7 +15,6 @@ TARGET_URLS = [
 ]
 
 def get_ipv6_array():
-    """生成 17b 网段 1-100 的阵列"""
     array = []
     for i in range(1, 101):
         name = f"FR-17b-{i:03d}"
@@ -75,20 +74,23 @@ def harvest():
 if __name__ == "__main__":
     nodes = harvest()
     
-    # --- 关键修正：在头部强制开启 IPv6 识别 ---
+    # --- Clash Meta 核心优化配置 ---
     yaml_lines = [
-        "port: 7890",
-        "socks-port: 7891",
+        "ipv6: true",
+        "prefer-ipv6: true", # 👈 强制优先使用 IPv6
         "allow-lan: true",
+        "unified-delay: true",
         "mode: rule",
-        "ipv6: true",  # 👈 必须开启，否则内核会无视所有 v6 节点
         "dns:",
         "  enable: true",
-        "  ipv6: true", # 👈 确保 DNS 也能解析 v6
+        "  ipv6: true",
         "  enhanced-mode: fake-ip",
+        "  fake-ip-range: 198.18.0.1/16",
         "  nameserver:",
         "    - 223.5.5.5",
         "    - 119.29.29.29",
+        "    - 8.8.8.8",
+        "    - 'https://dns.google/dns-query'",
         "proxies:"
     ]
     
@@ -100,12 +102,14 @@ if __name__ == "__main__":
         yaml_lines.append(f"    port: {n['port']}")
         yaml_lines.append(f"    password: \"{n['password']}\"")
         yaml_lines.append(f"    sni: \"{sni_val}\"")
+        yaml_lines.append(f"    udp: true")
         yaml_lines.append(f"    skip-cert-verify: true")
     
     yaml_lines.append("\nproxy-groups:")
     yaml_lines.append("  - name: \"📺 电视自动故障转移\"")
     yaml_lines.append("    type: fallback")
-    yaml_lines.append("    url: 'http://www.gstatic.com/generate_204'")
+    # 换一个对双栈支持更好的测速地址
+    yaml_lines.append("    url: 'http://cp.cloudflare.com/generate_204'")
     yaml_lines.append("    interval: 300")
     yaml_lines.append("    proxies:")
     for n in nodes:
@@ -117,4 +121,4 @@ if __name__ == "__main__":
 
     with open("proxies.yaml", "w", encoding="utf-8") as f:
         f.write("\n".join(yaml_lines))
-    print(f"✅ 修正版配置已生成。")
+    print(f"✅ Meta 专用优化配置已生成，包含 {len(nodes)} 个节点。")
