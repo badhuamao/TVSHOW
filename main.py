@@ -30,7 +30,6 @@ def get_ipv6_array():
     return array
 
 def search_github():
-    """从 GitHub 全网捕获动态节点"""
     if not TOKEN: return []
     search_url = f"https://api.github.com/search/code?q={SEARCH_QUERY}&sort=indexed"
     headers = {"Authorization": f"token {TOKEN}", "Accept": "application/vnd.github.v3+json"}
@@ -45,7 +44,6 @@ def search_github():
     return found_urls
 
 def harvest():
-    """合并特种兵与全网收割成果"""
     final_nodes = get_ipv6_array()
     seen_uids = {f"{n['server']}:{n['port']}" for n in final_nodes}
     name_counts = {}
@@ -57,7 +55,6 @@ def harvest():
         try:
             resp = requests.get(url, headers=headers, timeout=10)
             if resp.status_code != 200: continue
-            # 捕获动态 Hysteria2 节点
             links = re.findall(r"hysteria2://([^@]+)@([\w\d\.-]+?\.fastervpn\.world):(\d+)", resp.text, re.I)
             for pwd, host, port in links:
                 uid = f"{host}:{port}"
@@ -78,12 +75,20 @@ def harvest():
 if __name__ == "__main__":
     nodes = harvest()
     
-    # 采用最稳固的多行 YAML 格式，确保电视软件能读出地址
+    # --- 关键修正：在头部强制开启 IPv6 识别 ---
     yaml_lines = [
         "port: 7890",
         "socks-port: 7891",
         "allow-lan: true",
         "mode: rule",
+        "ipv6: true",  # 👈 必须开启，否则内核会无视所有 v6 节点
+        "dns:",
+        "  enable: true",
+        "  ipv6: true", # 👈 确保 DNS 也能解析 v6
+        "  enhanced-mode: fake-ip",
+        "  nameserver:",
+        "    - 223.5.5.5",
+        "    - 119.29.29.29",
         "proxies:"
     ]
     
@@ -110,8 +115,6 @@ if __name__ == "__main__":
     yaml_lines.append("  - GEOIP,CN,DIRECT")
     yaml_lines.append("  - MATCH,\"📺 电视自动故障转移\"")
 
-    # 写入 proxies.yaml
     with open("proxies.yaml", "w", encoding="utf-8") as f:
         f.write("\n".join(yaml_lines))
-    
-    print(f"✅ 满血收割完成！共计 {len(nodes)} 个节点。")
+    print(f"✅ 修正版配置已生成。")
