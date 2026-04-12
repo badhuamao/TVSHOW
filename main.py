@@ -1,11 +1,11 @@
 import requests
 import re
 import os
+import base64
 
-# --- 配置区：你的四大老巢和全网搜索关键词 ---
+# --- 配置区保持原样 ---
 env_search = os.getenv("INPUT_SEARCH_KEY")
 SEARCH_QUERY = env_search if env_search else 'fastervpn.world "hysteria2"'
-env_url = os.getenv("INPUT_CUSTOM_URL")
 TOKEN = os.getenv("MY_GITHUB_TOKEN")
 
 TARGET_URLS = [
@@ -14,9 +14,6 @@ TARGET_URLS = [
     "https://raw.githubusercontent.com/ssrsub/ssr/master/singbox.json",
     "https://raw.githubusercontent.com/Whoahaow/rjsxrd/main/githubmirror/default/24.txt"
 ]
-
-if env_url and env_url.startswith("http"):
-    TARGET_URLS.append(env_url)
 
 def search_github():
     if not TOKEN: return []
@@ -43,14 +40,23 @@ def harvest():
         try:
             resp = requests.get(url, headers=headers, timeout=10)
             if resp.status_code != 200: continue
-            content = resp.text
             
-            # 模式 1：直连链接提取
+            # --- 关键改动：Base64 自动嗅探 ---
+            content = resp.text.strip()
+            # 逻辑：如果没有空格且长度较大，大概率是编码后的订阅
+            if len(content) > 30 and ' ' not in content and '\n' not in content:
+                try:
+                    # 自动补齐等号并解码
+                    content = base64.b64decode(content + '=' * (-len(content) % 4)).decode('utf-8')
+                    print(f"🔓 解码成功: {url[:40]}...")
+                except: pass # 解码失败就当普通文本处理
+
+            # 模式 1：直连链接提取 (锁定域名，过滤 17b)
             links = re.findall(r"hysteria2://([^@]+)@([\w\d\.-]+?\.fastervpn\.world):(\d+)", content, re.I)
             for pwd, host, port in links:
                 save_node(host, port, pwd, final_nodes, seen_uids, name_counts)
             
-            # 模式 2：针对 YAML/JSON 的块提取
+            # 模式 2：YAML/JSON 块提取
             blocks = re.split(r'-\s+name:|{', content)
             for block in blocks:
                 if "fastervpn.world" in block:
@@ -76,30 +82,18 @@ def save_node(host, port, pwd, final_nodes, seen_uids, name_counts):
 if __name__ == "__main__":
     nodes = harvest()
     
-    # --- 构建电视专用 Clash YAML ---
+    # 后面构建 YAML 的逻辑保持不变...
     yaml_lines = [
-        "port: 7890",
-        "socks-port: 7891",
-        "allow-lan: true",
-        "mode: rule",
-        "proxies:"
+        "port: 7890", "socks-port: 7891", "allow-lan: true", "mode: rule", "proxies:"
     ]
     for n in nodes:
         yaml_lines.append(f"  - {{name: '{n['name']}', server: {n['server']}, port: {n['port']}, type: hysteria2, password: '{n['password']}', sni: {n['server']}, skip-cert-verify: true}}")
     
-    yaml_lines.append("\nproxy-groups:")
-    yaml_lines.append("  - name: 📺 电视自动故障转移")
-    yaml_lines.append("    type: fallback")
-    yaml_lines.append("    url: 'http://www.gstatic.com/generate_204'")
-    yaml_lines.append("    interval: 300")
-    yaml_lines.append("    proxies:")
-    for n in nodes:
-        yaml_lines.append(f"      - '{n['name']}'")
+    yaml_lines.append("\nproxy-groups:\n  - name: 📺 电视自动故障转移\n    type: fallback\n    url: 'http://www.gstatic.com/generate_204'\n    interval: 300\n    proxies:")
+    for n in nodes: yaml_lines.append(f"      - '{n['name']}'")
     
-    yaml_lines.append("\nrules:")
-    yaml_lines.append("  - GEOIP,CN,DIRECT")
-    yaml_lines.append("  - MATCH,📺 电视自动故障转移")
+    yaml_lines.append("\nrules:\n  - GEOIP,CN,DIRECT\n  - MATCH,📺 电视自动故障转移")
 
     with open("proxies.yaml", "w", encoding="utf-8") as f:
         f.write("\n".join(yaml_lines))
-    print(f"✅ 收割完成，共斩获 {len(nodes)} 个节点。")
+    print(f"✅ 收割完成，当前库内节点总数：{len(nodes)}")
