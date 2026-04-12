@@ -3,9 +3,10 @@ import re
 import os
 import base64
 
-# --- 配置区保持原样 ---
+# --- 配置区：去掉 "hysteria2" 限制，扩大包围圈 ---
 env_search = os.getenv("INPUT_SEARCH_KEY")
-SEARCH_QUERY = env_search if env_search else 'fastervpn.world "hysteria2"'
+# 咱们直接搜域名，凡是带这个域名的文件一个都不放过
+SEARCH_QUERY = env_search if env_search else 'fastervpn.world'
 TOKEN = os.getenv("MY_GITHUB_TOKEN")
 
 TARGET_URLS = [
@@ -17,6 +18,7 @@ TARGET_URLS = [
 
 def search_github():
     if not TOKEN: return []
+    # 增加按索引时间排序，确保抓到的是最新的
     search_url = f"https://api.github.com/search/code?q={SEARCH_QUERY}&sort=indexed"
     headers = {"Authorization": f"token {TOKEN}", "Accept": "application/vnd.github.v3+json"}
     found_urls = []
@@ -41,28 +43,29 @@ def harvest():
             resp = requests.get(url, headers=headers, timeout=10)
             if resp.status_code != 200: continue
             
-            # --- 关键改动：Base64 自动嗅探 ---
             content = resp.text.strip()
-            # 逻辑：如果没有空格且长度较大，大概率是编码后的订阅
+            
+            # Base64 自动识别逻辑（保留，以防万一）
             if len(content) > 30 and ' ' not in content and '\n' not in content:
                 try:
-                    # 自动补齐等号并解码
                     content = base64.b64decode(content + '=' * (-len(content) % 4)).decode('utf-8')
-                    print(f"🔓 解码成功: {url[:40]}...")
-                except: pass # 解码失败就当普通文本处理
+                except: pass
 
-            # 模式 1：直连链接提取 (锁定域名，过滤 17b)
-            links = re.findall(r"hysteria2://([^@]+)@([\w\d\.-]+?\.fastervpn\.world):(\d+)", content, re.I)
-            for pwd, host, port in links:
+            # 模式 1：链接提取（只要带域名，我们就认为它是 hy2，因为这是咱们的目的）
+            # 注意：即便明文里没写 hysteria2，只要链接格式对，咱们就把它按 hy2 处理
+            links = re.findall(r"(\w+)://([^@]+)@([\w\d\.-]+?\.fastervpn\.world):(\d+)", content, re.I)
+            for proto, pwd, host, port in links:
+                # 即使原链接是别的协议，我们也强行尝试以 hy2 运行，因为原厂节点基本都是这个
                 save_node(host, port, pwd, final_nodes, seen_uids, name_counts)
             
-            # 模式 2：YAML/JSON 块提取
+            # 模式 2：块提取（不再硬性要求 block 里包含 hysteria2 关键字）
             blocks = re.split(r'-\s+name:|{', content)
             for block in blocks:
                 if "fastervpn.world" in block:
                     h = re.search(r"([\w\d\.-]+?\.fastervpn\.world)", block)
                     p = re.search(r"(?:port|server_port)[:\"\s]+(\d+)", block)
-                    pw = re.search(r"(?:password|auth_str|auth)[:\"\s]+['\"]?([^'\"\s,{}]+)['\"]?", block)
+                    # 密码提取更激进一点
+                    pw = re.search(r"(?:password|auth_str|auth|auth-str)[:\"\s]+['\"]?([^'\"\s,{}]+)['\"]?", block)
                     if h and p:
                         save_node(h.group(1), p.group(1), pw.group(1) if pw else "test.+", final_nodes, seen_uids, name_counts)
         except: continue
@@ -72,6 +75,7 @@ def save_node(host, port, pwd, final_nodes, seen_uids, name_counts):
     pwd = pwd.strip().strip("'").strip('"').split(',')[0]
     uid = f"{host}:{port}:{pwd}"
     if uid not in seen_uids:
+        # 优化命名，保留地区信息
         base_name = host.split('.')[0]
         name_counts[base_name] = name_counts.get(base_name, 0) + 1
         display_name = f"{base_name}_{name_counts[base_name]}"
@@ -81,11 +85,8 @@ def save_node(host, port, pwd, final_nodes, seen_uids, name_counts):
 
 if __name__ == "__main__":
     nodes = harvest()
-    
-    # 后面构建 YAML 的逻辑保持不变...
-    yaml_lines = [
-        "port: 7890", "socks-port: 7891", "allow-lan: true", "mode: rule", "proxies:"
-    ]
+    # ... 后面的 YAML 生成逻辑和之前完全一致 ...
+    yaml_lines = ["port: 7890", "socks-port: 7891", "allow-lan: true", "mode: rule", "proxies:"]
     for n in nodes:
         yaml_lines.append(f"  - {{name: '{n['name']}', server: {n['server']}, port: {n['port']}, type: hysteria2, password: '{n['password']}', sni: {n['server']}, skip-cert-verify: true}}")
     
@@ -96,4 +97,4 @@ if __name__ == "__main__":
 
     with open("proxies.yaml", "w", encoding="utf-8") as f:
         f.write("\n".join(yaml_lines))
-    print(f"✅ 收割完成，当前库内节点总数：{len(nodes)}")
+    print(f"✅ 广撒网完成！共斩获 {len(nodes)} 个疑似原厂节点。")
