@@ -15,14 +15,13 @@ TARGET_URLS = [
 ]
 
 def get_ipv6_array():
-    """生成 17b 网段 1-100 的阵列，带上正确的方括号"""
+    """生成 17b 网段 1-100 阵列"""
     array = []
     for i in range(1, 101):
         name = f"FR-17b-{i:03d}"
         node = {
             "name": name,
-            # 关键修正：确保 server 字符串自带方括号
-            "server": f"[2001:bc8:32d7:17b::{i}]",
+            "server": f"[2001:bc8:32d7:17b::{i}]", # 依然自带括号
             "port": 22000,
             "password": "dongtaiwang.com",
             "sni": "apple.com"
@@ -78,9 +77,9 @@ if __name__ == "__main__":
     yaml_lines = ["port: 7890", "socks-port: 7891", "allow-lan: true", "mode: rule", "proxies:"]
     
     for n in nodes:
-        # server 已经带了括号，sni 要去掉括号
         sni_val = n['sni'].replace("[", "").replace("]", "")
-        yaml_lines.append(f"  - {{name: '{n['name']}', server: {n['server']}, port: {n['port']}, type: hysteria2, password: '{n['password']}', sni: {sni_val}, skip-cert-verify: true}}")
+        # 【关键修正】：为 server 字段强制添加单引号
+        yaml_lines.append(f"  - {{name: '{n['name']}', server: '{n['server']}', port: {n['port']}, type: hysteria2, password: '{n['password']}', sni: '{sni_val}', skip-cert-verify: true}}")
     
     yaml_lines.append("\nproxy-groups:")
     yaml_lines.append("  - name: 📺 电视自动故障转移")
