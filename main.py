@@ -2,7 +2,7 @@ import requests
 import re
 import os
 
-# --- 1. 基础配置 ---
+# --- 基础配置 ---
 env_search = os.getenv("INPUT_SEARCH_KEY")
 SEARCH_QUERY = env_search if env_search else 'fastervpn.world "hysteria2"'
 TOKEN = os.getenv("MY_GITHUB_TOKEN")
@@ -46,7 +46,6 @@ def harvest():
     final_nodes = get_ipv6_array()
     seen_uids = {f"{n['server']}:{n['port']}" for n in final_nodes}
     name_counts = {}
-    
     all_sources = list(set(TARGET_URLS + search_github()))
     headers = {'User-Agent': 'Mozilla/5.0'}
     
@@ -62,10 +61,7 @@ def harvest():
                     name_counts[base_name] = name_counts.get(base_name, 0) + 1
                     final_nodes.append({
                         "name": f"{base_name}_{name_counts[base_name]}",
-                        "server": host,
-                        "port": port,
-                        "password": pwd,
-                        "sni": host
+                        "server": host, "port": port, "password": pwd, "sni": host
                     })
                     seen_uids.add(uid)
         except: continue
@@ -73,11 +69,9 @@ def harvest():
 
 if __name__ == "__main__":
     nodes = harvest()
-    
-    # --- Clash Meta 核心优化配置 ---
     yaml_lines = [
         "ipv6: true",
-        "prefer-ipv6: true", # 👈 强制优先使用 IPv6
+        "prefer-ipv6: true",
         "allow-lan: true",
         "unified-delay: true",
         "mode: rule",
@@ -85,12 +79,10 @@ if __name__ == "__main__":
         "  enable: true",
         "  ipv6: true",
         "  enhanced-mode: fake-ip",
-        "  fake-ip-range: 198.18.0.1/16",
         "  nameserver:",
         "    - 223.5.5.5",
         "    - 119.29.29.29",
         "    - 8.8.8.8",
-        "    - 'https://dns.google/dns-query'",
         "proxies:"
     ]
     
@@ -108,7 +100,6 @@ if __name__ == "__main__":
     yaml_lines.append("\nproxy-groups:")
     yaml_lines.append("  - name: \"📺 电视自动故障转移\"")
     yaml_lines.append("    type: fallback")
-    # 换一个对双栈支持更好的测速地址
     yaml_lines.append("    url: 'http://cp.cloudflare.com/generate_204'")
     yaml_lines.append("    interval: 300")
     yaml_lines.append("    proxies:")
@@ -121,4 +112,3 @@ if __name__ == "__main__":
 
     with open("proxies.yaml", "w", encoding="utf-8") as f:
         f.write("\n".join(yaml_lines))
-    print(f"✅ Meta 专用优化配置已生成，包含 {len(nodes)} 个节点。")
