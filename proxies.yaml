@@ -3,23 +3,27 @@ socks-port: 7891
 allow-lan: true
 mode: rule
 proxies:
-  - {name: 'vpn-jp-007_1', server: vpn-jp-007.fastervpn.world, port: 443, type: hysteria2, password: 'qQe1z5kU8kN6SlKnDt9Ru3Qp', sni: vpn-jp-007.fastervpn.world, skip-cert-verify: true}
-  - {name: 'vpn-us-019_1', server: vpn-us-019.fastervpn.world, port: 443, type: hysteria2, password: 'qQe1z5kU8kN6SlKnDt9Ru3Qp', sni: vpn-us-019.fastervpn.world, skip-cert-verify: true}
-  - {name: 'vpn-us-021_1', server: vpn-us-021.fastervpn.world, port: 443, type: hysteria2, password: 'qQe1z5kU8kN6SlKnDt9Ru3Qp', sni: vpn-us-021.fastervpn.world, skip-cert-verify: true}
-  - {name: 'vpn-jp-018_1', server: vpn-jp-018.fastervpn.world, port: 443, type: hysteria2, password: 'qQe1z5kU8kN6SlKnDt9Ru3Qp', sni: vpn-jp-018.fastervpn.world, skip-cert-verify: true}
-  - {name: 'vpn-sg-001_1', server: vpn-sg-001.fastervpn.world, port: 443, type: hysteria2, password: 'qQe1z5kU8kN6SlKnDt9Ru3Qp', sni: vpn-sg-001.fastervpn.world, skip-cert-verify: true}
-  - {name: 'vpn-us-006_1', server: vpn-us-006.fastervpn.world, port: 443, type: hysteria2, password: 'qQe1z5kU8kN6SlKnDt9Ru3Qp', sni: vpn-us-006.fastervpn.world, skip-cert-verify: true}
   - {name: 'vpn-jp-016_1', server: vpn-jp-016.fastervpn.world, port: 443, type: hysteria2, password: 'qQe1z5kU8kN6SlKnDt9Ru3Qp', sni: vpn-jp-016.fastervpn.world, skip-cert-verify: true}
-  - {name: 'vpn-sg-001_2', server: vpn-sg-001.fastervpn.world, port: 443, type: hysteria2, password: '9d80dd14-ac44-11ee-a116-f23c9164ca5d', sni: vpn-sg-001.fastervpn.world, skip-cert-verify: true}
-  - {name: 'vpn-sg-002_1', server: vpn-sg-002.fastervpn.world, port: 443, type: hysteria2, password: 'qQe1z5kU8kN6SlKnDt9Ru3Qp', sni: vpn-sg-002.fastervpn.world, skip-cert-verify: true}
-  - {name: 'vpn-us-019_2', server: vpn-us-019.fastervpn.world, port: 80, type: hysteria2, password: 'qQe1z5kU8kN6SlKnDt9Ru3Qp', sni: vpn-us-019.fastervpn.world, skip-cert-verify: true}
-  - {name: 'vpn-sg-001_3', server: vpn-sg-001.fastervpn.world, port: 80, type: hysteria2, password: 'password:', sni: vpn-sg-001.fastervpn.world, skip-cert-verify: true}
-  - {name: 'vpn-us-021_2', server: vpn-us-021.fastervpn.world, port: 443, type: hysteria2, password: 'd076280a-0d5f-11f0-8a7b-f23c913c8d2b', sni: vpn-us-021.fastervpn.world, skip-cert-verify: true}
-  - {name: 'vpn-us-018_1', server: vpn-us-018.fastervpn.world, port: 443, type: hysteria2, password: 'qQe1z5kU8kN6SlKnDt9Ru3Qp', sni: vpn-us-018.fastervpn.world, skip-cert-verify: true}
+  - {name: 'vpn-jp-007_1', server: vpn-jp-007.fastervpn.world, port: 443, type: hysteria2, password: 'qQe1z5kU8kN6SlKnDt9Ru3Qp', sni: vpn-jp-007.fastervpn.world, skip-cert-verify: true}
+  - {name: 'vpn-us-006_1', server: vpn-us-006.fastervpn.world, port: 443, type: hysteria2, password: 'qQe1z5kU8kN6SlKnDt9Ru3Qp', sni: vpn-us-006.fastervpn.world, skip-cert-verify: true}
   - {name: 'vpn-us-008_1', server: vpn-us-008.fastervpn.world, port: 443, type: hysteria2, password: 'qQe1z5kU8kN6SlKnDt9Ru3Qp', sni: vpn-us-008.fastervpn.world, skip-cert-verify: true}
-  - {name: 'vpn-jp-001_1', server: vpn-jp-001.fastervpn.world, port: 443, type: hysteria2, password: 'qQe1z5kU8kN6SlKnDt9Ru3Qp', sni: vpn-jp-001.fastervpn.world, skip-cert-verify: true}
+  - {name: 'vpn-us-019_1', server: vpn-us-019.fastervpn.world, port: 443, type: hysteria2, password: 'qQe1z5kU8kN6SlKnDt9Ru3Qp', sni: vpn-us-019.fastervpn.world, skip-cert-verify: true}
+  - {name: 'vpn-us-021_1', server: vpn-us-021.fastervpn.world, port: 443, type: hysteria2, password: ':', sni: vpn-us-021.fastervpn.world, skip-cert-verify: true}
+  - {name: 'vpn-sg-002_1', server: vpn-sg-002.fastervpn.world, port: 443, type: hysteria2, password: 'qQe1z5kU8kN6SlKnDt9Ru3Qp', sni: vpn-sg-002.fastervpn.world, skip-cert-verify: true}
   - {name: 'vpn-us-011_1', server: vpn-us-011.fastervpn.world, port: 443, type: hysteria2, password: 'qQe1z5kU8kN6SlKnDt9Ru3Qp', sni: vpn-us-011.fastervpn.world, skip-cert-verify: true}
   - {name: 'vpn-us-020_1', server: vpn-us-020.fastervpn.world, port: 443, type: hysteria2, password: 'qQe1z5kU8kN6SlKnDt9Ru3Qp', sni: vpn-us-020.fastervpn.world, skip-cert-verify: true}
+  - {name: 'vpn-sg-001_1', server: vpn-sg-001.fastervpn.world, port: 443, type: hysteria2, password: 'qQe1z5kU8kN6SlKnDt9Ru3Qp', sni: vpn-sg-001.fastervpn.world, skip-cert-verify: true}
+  - {name: 'vpn-us-021_2', server: vpn-us-021.fastervpn.world, port: 443, type: hysteria2, password: 'qQe1z5kU8kN6SlKnDt9Ru3Qp', sni: vpn-us-021.fastervpn.world, skip-cert-verify: true}
+  - {name: 'vpn-jp-001_1', server: vpn-jp-001.fastervpn.world, port: 443, type: hysteria2, password: 'f8f7aCzcPKbsF8p3', sni: vpn-jp-001.fastervpn.world, skip-cert-verify: true}
+  - {name: 'vpn-jp-018_1', server: vpn-jp-018.fastervpn.world, port: 443, type: hysteria2, password: 'qQe1z5kU8kN6SlKnDt9Ru3Qp', sni: vpn-jp-018.fastervpn.world, skip-cert-verify: true}
+  - {name: 'vpn-sg-002_2', server: vpn-sg-002.fastervpn.world, port: 8443, type: hysteria2, password: 'qQe1z5kU8kN6SlKnDt9Ru3Qp', sni: vpn-sg-002.fastervpn.world, skip-cert-verify: true}
+  - {name: 'vpn-jp-001_2', server: vpn-jp-001.fastervpn.world, port: 443, type: hysteria2, password: 'qQe1z5kU8kN6SlKnDt9Ru3Qp', sni: vpn-jp-001.fastervpn.world, skip-cert-verify: true}
+  - {name: 'vpn-jp-001_3', server: vpn-jp-001.fastervpn.world, port: 587, type: hysteria2, password: '79960b0b-7d31-4263-8915-6511b0e137a8', sni: vpn-jp-001.fastervpn.world, skip-cert-verify: true}
+  - {name: 'vpn-us-021_3', server: vpn-us-021.fastervpn.world, port: 53, type: hysteria2, password: 'ad49d6ea-c453-4a2e-b36a-2b71a3e0ed12', sni: vpn-us-021.fastervpn.world, skip-cert-verify: true}
+  - {name: 'vpn-sg-001_2', server: vpn-sg-001.fastervpn.world, port: 16618, type: hysteria2, password: 'BxceQaOe', sni: vpn-sg-001.fastervpn.world, skip-cert-verify: true}
+  - {name: 'vpn-sg-001_3', server: vpn-sg-001.fastervpn.world, port: 443, type: hysteria2, password: 'eyJ2IjoiMiIsInBzIjoi8J+HrvCfh7Mg5py65Zy65o6o6I2QOmRhZmVpLmRlIOWNsOW6piAwMiIsImFkZCI6InBsYW5iLm1vamNuLmNvbSIsInBvcnQiOiIxNjYyNiIsImlkIjoiNjI5YjM2NzUtNWNhNC00NmJhLWFkN2ItYmMyNzMwM2ZmZDQzIiwiYWlkIjoiMCIsInNjeSI6ImF1dG8iLCJuZXQiOiJ3cyIsInR5cGUiOiIiLCJ0bHMiOiIiLCJmcCI6ImNocm9tZSIsInBhdGgiOiIvIiwiaG9zdCI6IjU1MzI5YWM4OTlkZjllOGU4MmQzZDhjYTA4ZTQwMmZhLm1vYmdzbGIudGJjYWNoZS5jb20ifQ==
+vmess://eyJ2IjoiMiIsInBzIjoi8J+HuPCfh6wg5py65Zy65o6o6I2QOmRhZmVpLmRlIOaWsOWKoOWdoSAwNSIsImFkZCI6InBsYW5iLm1vamNuLmNvbSIsInBvcnQiOiIxNjYxOCIsImlkIjoiNjI5YjM2NzUtNWNhNC00NmJhLWFkN2ItYmMyNzMwM2ZmZDQzIiwiYWlkIjoiMCIsInNjeSI6ImF1dG8iLCJuZXQiOiJ3cyIsInR5cGUiOiIiLCJ0bHMiOiIiLCJmcCI6ImNocm9tZSIsInBhdGgiOiIvIiwiaG9zdCI6InBsYW5iLm1vamNuLmNvbSJ9
+hysteria2://qQe1z5kU8kN6SlKnDt9Ru3Qp', sni: vpn-sg-001.fastervpn.world, skip-cert-verify: true}
 
 proxy-groups:
   - name: 📺 电视自动故障转移
@@ -27,23 +31,25 @@ proxy-groups:
     url: 'http://www.gstatic.com/generate_204'
     interval: 300
     proxies:
+      - 'vpn-jp-016_1'
       - 'vpn-jp-007_1'
+      - 'vpn-us-006_1'
+      - 'vpn-us-008_1'
       - 'vpn-us-019_1'
       - 'vpn-us-021_1'
-      - 'vpn-jp-018_1'
-      - 'vpn-sg-001_1'
-      - 'vpn-us-006_1'
-      - 'vpn-jp-016_1'
-      - 'vpn-sg-001_2'
       - 'vpn-sg-002_1'
-      - 'vpn-us-019_2'
-      - 'vpn-sg-001_3'
-      - 'vpn-us-021_2'
-      - 'vpn-us-018_1'
-      - 'vpn-us-008_1'
-      - 'vpn-jp-001_1'
       - 'vpn-us-011_1'
       - 'vpn-us-020_1'
+      - 'vpn-sg-001_1'
+      - 'vpn-us-021_2'
+      - 'vpn-jp-001_1'
+      - 'vpn-jp-018_1'
+      - 'vpn-sg-002_2'
+      - 'vpn-jp-001_2'
+      - 'vpn-jp-001_3'
+      - 'vpn-us-021_3'
+      - 'vpn-sg-001_2'
+      - 'vpn-sg-001_3'
 
 rules:
   - GEOIP,CN,DIRECT
